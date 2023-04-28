@@ -1,13 +1,16 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { RouterProvider } from 'react-router-dom';
-import router from './routes/routes.jsx';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App.jsx";
+import "./index.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { RouterProvider } from "react-router-dom";
+import router from "./routes/routes.jsx";
+import UserContext from "./context/UserContext.jsx";
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router}></RouterProvider>
-  </React.StrictMode>,
-)
+    <UserContext>
+      <RouterProvider router={router}></RouterProvider>
+    </UserContext>
+  </React.StrictMode>
+);

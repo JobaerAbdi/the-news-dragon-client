@@ -28,11 +28,10 @@ const NewsCard = ({ news }) => {
           {details && details?.length < 250 ? (
             <>{details}</>
           ) : (
-            <>{details.slice(0, 250)}...</>
-          )}{" "}
-          <Link className="text-warning" to={``}>
+            <>{details.slice(0, 250)}... <Link to={`/news/${_id}`}>
             Read More
-          </Link>
+          </Link></>
+          )}
         </Card.Text>
       </Card.Body>
 
